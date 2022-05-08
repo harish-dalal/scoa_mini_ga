@@ -1,5 +1,6 @@
 import numpy as np
 import copy
+from helper.helper import initializeBoard
 
 class TicTacToe(object):
 
@@ -12,6 +13,7 @@ class TicTacToe(object):
         self.winner = -1
         self.moves = []
         self.location = {1:(0,0), 2:(0,1), 3:(0,2), 4:(1,0), 5:(1,1), 6:(1,2), 7:(2,0), 8:(2,1), 9:(2,2)}
+        initializeBoard()
 
     def place(self, pos):
         pos = int(pos)
@@ -87,6 +89,7 @@ class TicTacToe(object):
     def play(self, player_move):
         
         # place and record moves
+        print(player_move)
         pos = self.place(player_move)
 
         # if move already occured
